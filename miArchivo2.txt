@@ -1,0 +1,9 @@
+22R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%%%
+6R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%6%6%
+5R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%%%
+4R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%1%1%
+3R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%1%1%
+1R%null%1.0%null%1%1%1995%null%null%null%1%1%1%1%1%1%1%1%1%1%
+2R%null%9.0%null%9%9%1995%null%null%null%9%9%9%9%9%9%9%9%%%
+9R%null%9.0%null%9%9%1995%null%null%null%9%9%9%9%9%9%9%9%%%
+
