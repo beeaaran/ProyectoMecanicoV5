@@ -240,7 +240,7 @@ public class cancelarServicio extends javax.swing.JFrame {
         ID = (String) st1.nextElement();
        
 
-        if (ID.equals(codigoBuscado)) {
+        if (ID.equals(codigoBuscado+"R")) {
         
         
         found = true;
@@ -332,7 +332,7 @@ public class cancelarServicio extends javax.swing.JFrame {
         ID = (String) st1.nextElement();
        
 
-        if (ID.equals(codigoBuscado)) {
+        if (ID.equals(codigoBuscado+"R")) {
         String NOMBREDELSERVICIO = (String) st1.nextElement(); String COSTO = (String) st1.nextElement();  String MECANICOASIGNADO = (String) st1.nextElement();
         String FECHALLE = (String) st1.nextElement(); String FECHAENTR = (String) st1.nextElement(); String MODELO = (String) st1.nextElement(); 
         String MARCA = (String) st1.nextElement(); String COLOR = (String) st1.nextElement(); String SUBMARCA = (String) st1.nextElement(); 
