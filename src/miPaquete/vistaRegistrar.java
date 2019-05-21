@@ -155,6 +155,11 @@ public class vistaRegistrar extends javax.swing.JFrame {
         jLabel17.setText("Fecha de entrega");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 519, -1, -1));
 
+        marcaComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                seleccionarSubmarca(evt);
+            }
+        });
         jPanel1.add(marcaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 38, 113, -1));
         jPanel1.add(placasTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 149, 144, -1));
         jPanel1.add(kilometrajeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 158, 110, -1));
@@ -243,21 +248,21 @@ public class vistaRegistrar extends javax.swing.JFrame {
 
     private void registrarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarjButtonActionPerformed
     String placas = placasTextField.getText();
-    String submarca = submarcaComboBox.getItemAt(WIDTH);
+    String submarca = (String)submarcaComboBox.getSelectedItem();
     String nombreCliente = nombreClienteTextField.getText();
     String idDeServicio = idDeServiciojTextField.getText();
     String direccion = direccionClienteTextField.getText();
     String correo = correoClienteTextField.getText();
     String ultimaVisita = ultimaVisitaTextField.getText();
-    String nombreDelServicio = nombreServiciojComboBox.getItemAt(WIDTH);
+    String nombreDelServicio = (String)nombreServiciojComboBox.getSelectedItem();
     String observacionesCliente = observacionesClientejTextField.getText();
     
-    String mecanicoAsignado = mecanicoAsignadojComboBox.getItemAt(WIDTH);
+    String mecanicoAsignado = (String)mecanicoAsignadojComboBox.getSelectedItem();;
     String fechaLLegada = fechaLLegadajTextField.getText();
     String fechaEntrega = fechaEntregajTextField.getText();
     String modelo = (String)modeloComboBox.getSelectedItem();
-    String marca = marcaComboBox.getItemAt(WIDTH);
-    String color = colorComboBox.getItemAt(WIDTH);
+    String marca = (String)marcaComboBox.getSelectedItem();
+    String color = (String)colorComboBox.getSelectedItem();
     
     
     double costo = 0;
@@ -334,7 +339,7 @@ public class vistaRegistrar extends javax.swing.JFrame {
             try {
             Controlador.registrarServicio(idDeServicio, nombreDelServicio, costo, mecanicoAsignado, observacionesCliente, fechaLLegada, fechaEntrega, modelo, marca, color, submarca, placas, kilometraje, numeroDeSerie, nombreCliente, direccion, telefono, correo, ultimaVisita, observacionesMecanico);
             Scanner scan = new  Scanner(file);
-            String filecontent = (idDeServicio + "R" + "%" + nombreDelServicio + "%" + costo + "%" + mecanicoAsignado + "%" + fechaLLegada + "%" + fechaEntrega + "%" + modelo + "%" +marca + "%" + color + "%" + submarca + "%" + placas + "%" + kilometraje + "%" + numeroDeSerie + "%" + nombreCliente + "%" + direccion + "%" + telefono + "%" + correo + "%" + ultimaVisita + "%" + observacionesMecanico + "%" + observacionesCliente + "%" + "\n" );
+            String filecontent = (idDeServicio + "R" + "%" + nombreDelServicio + "%" + costo + "%" + mecanicoAsignado + "%" + fechaLLegada + "%" + fechaEntrega + "%" + modelo + "%" +marca + "%" + color + "%" + submarca + "%" + placas + "%" + kilometraje + "%" + numeroDeSerie + "%" + nombreCliente + "%" + direccion + "%" + telefono + "%" + correo + "%" + ultimaVisita + "%" + observacionesMecanico +"-"+ "%" + observacionesCliente + "-"  + "%" + "\n" );
             while (scan.hasNextLine()) {
                 filecontent = filecontent.concat(scan.nextLine() + "\n");
             }
@@ -388,6 +393,121 @@ public class vistaRegistrar extends javax.swing.JFrame {
         new VistaPrincipal().setVisible(true);
        dispose();
     }//GEN-LAST:event_jButtonAtras1ActionPerformed
+
+    private void seleccionarSubmarca(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_seleccionarSubmarca
+      submarcaComboBox.removeAllItems();
+        
+        switch((String)marcaComboBox.getSelectedItem()){
+            
+            case "Ford" : for (String sub : subMarcasFord)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Chevrolet" : for (String sub : subMarcasChevrolet)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Nissan" : for (String sub : subMarcasNissan)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Acura" : for (String sub : subMarcasAcura)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Alfa Romeo" : for (String sub : subMarcasAlfaRomeo)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Aston Martin" : for (String sub : subMarcasAstonMartin)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Audi" : for (String sub : subMarcasAudi)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "BAIC" : for (String sub : subMarcasBAIC)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Bentley" : for (String sub : subMarcasBentley)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "BMW" : for (String sub : subMarcasBMW)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Cadillac" : for (String sub : subMarcasCadillac)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Chrysler" : for (String sub : subMarcasChrysler)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Dodge" : for (String sub : subMarcasDODGE)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Ferrari" : for (String sub : subMarcasFerrari)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Fiat" : for (String sub : subMarcasFiat)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "GMC" : for (String sub : subMarcasGMC)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Honda" : for (String sub : subMarcasHonda)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Hyundai" : for (String sub : subMarcasHyundai)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Infiniti" : for (String sub : subMarcasInfiniti)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Jaguar" : for (String sub : subMarcasJaguar)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "JAC" : for (String sub : subMarcasJAC)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Jeep" : for (String sub : subMarcasJeep)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "KIA" : for (String sub : subMarcasKIA)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Mazda" : for (String sub : subMarcasMazda)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Mercedes Benz" : for (String sub : subMarcasMercedesBenz)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Mitsubishi" : for (String sub : subMarcasMitsubishi)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Peugeot" : for (String sub : subMarcasPeugeot)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "RAM" : for (String sub : subMarcasRAM)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Renault" : for (String sub : subMarcasRenault)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "SEAT" : for (String sub : subMarcasSeat)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Subaru" : for (String sub : subMarcasSubaru)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Suzuki" : for (String sub : subMarcasSuzuki)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Tesla" : for (String sub : subMarcasTesla)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Toyota" : for (String sub : subMarcasToyota)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Volkswagen" : for (String sub : subMarcasVolkswagen)
+                submarcaComboBox.addItem(sub);
+            break;
+            case "Volvo" : for (String sub : subMarcasVolvo)
+                submarcaComboBox.addItem(sub);
+        }
+    }//GEN-LAST:event_seleccionarSubmarca
       
      public static void mostrarMensajeEmergente(String titulo, String mensaje){
     
@@ -433,11 +553,82 @@ public class vistaRegistrar extends javax.swing.JFrame {
     
     private void cargarElementosAComboBox(){
     
+      for (String servicio : servicios){
+       nombreServiciojComboBox.addItem(servicio);
+   }
+    
+    for (String mecanico : mecanicos){
+        mecanicoAsignadojComboBox.addItem(mecanico);
+    }
+    
+    for (String color : colores){
+        colorComboBox.addItem(color);
+    }
+    
+    for (String marca : marcas){
+        marcaComboBox.addItem(marca);
+    }
     
     for (int i = 1995; i<2020;i++){
     modeloComboBox.addItem(Integer.toString(i));
+   
     }
     }
+    
+                   
+    
+    
+    
+    
+    public String marcas[]= {"Selecciona...","Ford","Chevrolet", "Nissan", "Acura", "Alfa Romeo", "ASTON MARTIN", "Audi",
+                            "BAIC", "Bentley", "BMW", "Cadillac", "Chrysler", "DODGE", "Ferrari", "Fiat", "GMC", "Honda", "Hyundai", "Infiniti",
+                            "Jaguar", "JAC", "Jeep", "KIA", "Mazda", "Mercedes Benz", "Mitsubishi", "Peugeot", "RAM", "Renault", "SEAT", "Subaru",
+                            "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo"};
+    public String colores[]= {"Selecciona...", "Rojo", "Azul", "Blanco", "Negro", "Amarillo", "Verde", "Gris"};
+    public String mecanicos[]= {"Selecciona...", "Jaime Prieto", "José Gutiérrez", "Arturo Gómez", "Luis Padilla", "Julián Gonzalez"};
+    public String servicios[]= {"Servicio completo", "Servicio menor", "Cambio de aceite", "Filtro de aire", "Filtro de aceite"};
+    public String subMarcasFord[]= {"B-MAX", "C-MAX", "EcoSport", "Edge", "Fiesta", "Focus", "Galaxy", "GT", "Ka+", "Kuga", "Mondeo", "Mustang",
+                                   "Ranger", "S-Max", "Tourneo", "Transit"};
+    public String subMarcasChevrolet[]= {"Aveo", "Camaro", "Captiva", "Corvette", "Cruze", "Malibu", "Orlando", "Spark", "Trax", "Volt"};
+    public String subMarcasNissan[]= {"370Z", "Evalia", "GT-R", "Juke", "Leaf", "Micra", "Navara", "NV300", "Pulsar", "Qashqal", "X-Trail"};
+    public String subMarcasAcura[]= {};
+    public String subMarcasAlfaRomeo[]= {"4C", "Giulia", "Giulietta", "MiTo", "Stelvio"};
+    public String subMarcasAstonMartin[]= {"DB11", "DB9", "DBX", "Rapide", "Vanquish", "Vantage"};
+    public String subMarcasAudi[]= {"A1", "A3", "A4", "A5", "A6", "A7", "A8", "e-tron", "Q1", "Q2", "Q3", "Q4", "Q5", "Q7", "Q8", "R8", "TT"};
+    public String subMarcasBAIC[]= {""};
+    public String subMarcasBentley[]= {"Bentayga", "Continental GT", "Flying Spur", "Mulsanne"};
+    public String subMarcasBMW[]= {"i3", "i8", "Serie 1", "Serie 2", "Serie 3", "Serie 4", "Serie 5", "Serie 6", "Serie 7", "Serie 8", "X1", "X2", "X3",
+                                  "X4", "X5", "X6", "X7", "Z4"};
+    public String subMarcasCadillac[]= {"ATS", "CT6", "CTS", "Escalade", "SRX", "XT5"};
+    public String subMarcasChrysler[]= {};
+    public String subMarcasDODGE[]= {};
+    public String subMarcasFerrari[]= {"488 GTB", "812 Superfast", "California T", "F12 Berlinetta", "F8 Tributo", "GTC4 Lusso", "LaFerrari", "Portofino", "Purosangue"};
+    public String subMarcasFiat[]= {"124 Spider", "500", "500L", "500X", "Doblo", "Fullback", "Panda", "Punto", "Tipo"};
+    public String subMarcasGMC[]= {};
+    public String subMarcasHonda[]= {"Civic", "CR-V", "HR-V", "Jazz", "NSX"};
+    public String subMarcasHyundai[]= {"Elantra", "Genesis", "Grand Santa Fe", "i10", "i20", "i30", "i40", "Ioniq", "ix20", "Kona", "Nexo", "Palisade",
+                                      "Santa Fe", "Tucson", "Veloster"};
+    public String subMarcasInfiniti[]= {"Q30", "Q50", "Q60", "Q70", "QX30", "QX50", "QX70"};
+    public String subMarcasJaguar[]= {"E-Pace", "F-Pace", "F-Type", "I-Pace", "XE", "XF", "XJ"};
+    public String subMarcasJAC[]= {};
+    public String subMarcasJeep[]= {"Cherokee", "Compass", "Grand Cherokee", "Renegade", "Wrangler"};
+    public String subMarcasKIA[]= {"Carens", "Cee'd", "Niro", "Optima", "Picanto", "Rio", "Sorento", "Soul", "Sportage", "Stinger", "Stonic", "Telluride", "Venga"};
+    public String subMarcasMazda[]= {"2", "3", "6", "CX-3", "CX-30", "CX-4", "CX-5", "MX-5"};
+    public String subMarcasMercedesBenz[]= {"AMG GT", "Citan", "CLA", "Clase A", "Clase B", "Clase C", "Clase E", "Clase G", "Clase S", "Clase V", "Clase X", "CLS",
+                                           "EQC", "GLA", "GLB", "GLC", "GLE", "GLS", "SL", "SLC"};
+    public String subMarcasMitsubishi[]= {"ASX", "Eclipse Cross", "i-MIEV", "L200", "Montero", "Outlander", "Space Star"};
+    public String subMarcasPeugeot[]= {"108", "2008", "208", "3008", "308", "5008", "508", "Bípper", "iOn", "Partner", "Rifter", "Traveller"};
+    public String subMarcasRAM[]= {""};
+    public String subMarcasRenault[]= {"Arkana", "Captur", "Clio", "Espace", "Kadjar", "Kangoo", "Koleos", "Mégane", "Scenic", "Talismán", "Trafic", "Twingo"};
+    public String subMarcasSeat[]= {"Alhambra", "Arona", "Ateca", "el-Born", "Ibiza", "León", "Mii", "Minimó", "Tarraco", "Toledo"};
+    public String subMarcasSubaru[]= {"BRZ", "Forester", "Impreza", "Levorg", "Outback", "WRX STI", "XV"};
+    public String subMarcasSuzuki[]= {"Baleno", "Celerio", "Ignis", "Jimny", "Swift", "SX4 / S-Cross", "Vitara"};
+    public String subMarcasTesla[]= {"Model 3", "Model S", "Model X", "Model Y", "Roadster"};
+    public String subMarcasToyota[]= {"Auris", "Avensis", "Aygo", "C-HR", "Corolla", "GT86", "Hilux", "Land Cruiser", "Prius", "ProAce", "RAV4", "Supra", "Verso", "Yaris"};
+    public String subMarcasVolkswagen[]= {"Amarok", "Arteon", "Beetle", "Caddy", "California", "Caravelle", "Crafter", "Golf", "Multivan", "Passat", "Polo", "Scirocco",
+                                         "Sharan", "T-Cross", "T-Roc", "Tiguan", "Touareg", "Touran", "UPI"};
+    public String subMarcasVolvo[]= {"S60", "S90", "V40", "V60", "V90", "XC40", "XC60", "XC90"};
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

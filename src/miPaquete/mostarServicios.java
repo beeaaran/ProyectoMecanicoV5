@@ -115,7 +115,7 @@ public class mostarServicios extends javax.swing.JFrame {
              int contador = 0;
              while(st1.hasMoreElements()){
                 switch(contador){
-                     case 0: jTextArea1.setText( jTextArea1.getText() + "\n" + "Id:   " + (String)st1.nextElement() + "\n");break;
+                     case 0: jTextArea1.setText(jTextArea1.getText() + "\n" + "Id:   " + (String)st1.nextElement() + "\n");break;
                      case 1: jTextArea1.setText( jTextArea1.getText() + "\n" + "Nombre del servicio:   " + (String)st1.nextElement() + "\n");break;
                      case 2: jTextArea1.setText( jTextArea1.getText() + "\n" + "Costo:   " + (String)st1.nextElement() + "\n");break;
                      case 3: jTextArea1.setText( jTextArea1.getText() + "\n" + "Mecanico Asignado:  " + (String)st1.nextElement() + "\n");break;
@@ -136,7 +136,7 @@ public class mostarServicios extends javax.swing.JFrame {
                      case 17: jTextArea1.setText(jTextArea1.getText() + "\n" +  "Ultima Visita:   " +(String)st1.nextElement() + "\n");break;
                      case 18: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Mecanico:    " +(String)st1.nextElement() + "\n");break;
                      
-                    case 19: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Cliente:   " + (String)st1.nextElement() + "\n");break;
+                    case 19: jTextArea1.setText(jTextArea1.getText() + "\n" + "Observaciones Cliente:   " + (String)st1.nextElement()+ "\n");break;
                  }
                  contador++;
                      

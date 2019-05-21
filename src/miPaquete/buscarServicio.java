@@ -386,7 +386,7 @@ public class buscarServicio extends javax.swing.JFrame {
         String PLACAS = (String) st1.nextElement(); String KILOMMETRAJE = (String) st1.nextElement(); 
         String NUMEROSERIE = (String) st1.nextElement();
         String NOMBRECLIENTE = (String) st1.nextElement(); String DIRECCION = (String) st1.nextElement(); String TELEFONO = (String) st1.nextElement(); String CORREO = (String) st1.nextElement();
-        String ULTVISITA = (String) st1.nextElement(); String OBSMEC = ""; String OBSCLI = "";  
+        String ULTVISITA = (String) st1.nextElement(); String OBSMEC  = (String) st1.nextElement(); String OBSCLI  = (String) st1.nextElement(); 
         
         
         found = true;
