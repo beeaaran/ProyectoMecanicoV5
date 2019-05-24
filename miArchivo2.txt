@@ -1,4 +1,4 @@
-10RM%Filtro de aceite%9.0%Luis Padilla%9%99%1998%Nissan%Azul%370Z%9%9%9%9%9%9%9%9%-%-%
-99RM%Filtro de aceite%9.0%Luis Padilla%9%99%1998%Nissan%Azul%370Z%9%9%9%9%9%9%9%9%-%-%
+11RM%Servicio menor%1.0%Julián Gonzalez%1%1%1997%Nissan%Negro%370Z%1%1%11%1%1%1%1%1%Obser Mec-%Obs Cliente-%
+10RM%Filtro de aceite%9.0%Luis Padilla%9%99%1998%Nissan%Azul%370Z%9%9%9%9%9%9%9%9%Esta Chido El Carro%Mi carro Falla%
 5RM%Servicio completo%5.0%Selecciona...%5%5%1995%Alfa Romeo%Amarillo%4C%5%5%5%5%5%5%5%5%-%-%
 1RM%Cambio de aceite%1.0%Arturo Gómez%1%1%1995%Nissan%Rojo%370Z%1%1%1%1%1%1%1%1%-%-%

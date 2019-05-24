@@ -5,12 +5,14 @@
  */
 package miPaquete;
 
+import static java.awt.image.ImageObserver.WIDTH;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
+import static miPaquete.buscarServicio.mostrarMensajeEmergente;
 
 /**
  *
@@ -73,6 +75,7 @@ public class facturaVista extends javax.swing.JFrame {
         kilometrajeTextField = new javax.swing.JTextField();
         iddeOrdenTextField = new javax.swing.JTextField();
         jButtonAtras = new javax.swing.JButton();
+        buscarjButtonAtras = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,9 +111,7 @@ public class facturaVista extends javax.swing.JFrame {
 
         jLabel6.setText("Fecha de factura:");
 
-        jLabel8.setText("Costo:");
-
-        numeroFacturajTextField.setEditable(false);
+        jLabel8.setText("Vehiculo:");
 
         fechaFacturajTextField.setEditable(false);
 
@@ -223,6 +224,13 @@ public class facturaVista extends javax.swing.JFrame {
             }
         });
 
+        buscarjButtonAtras.setText("Buscar");
+        buscarjButtonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarjButtonAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,7 +266,9 @@ public class facturaVista extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonAtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(buscarjButtonAtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -318,7 +328,10 @@ public class facturaVista extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel4)))
-                    .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buscarjButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -378,6 +391,105 @@ public class facturaVista extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
+    private void buscarjButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarjButtonAtrasActionPerformed
+       String idDeServicio = numeroFacturajTextField.getText();
+        if(!numeroFacturajTextField.getText().equals("")){
+
+       try {
+
+        
+
+
+        File file = new File ("miArchivo2.txt");
+        BufferedReader reader = null;
+        boolean found = false;
+       
+
+        try {
+        // FileReader reads text files in the default encoding.
+        FileReader fl = new FileReader(file);
+        String ID = ""; 
+        // Always wrap FileReader in BufferedReader.
+        reader = new BufferedReader(fl);
+        String text;
+
+        while((text = reader.readLine()) != null) {
+
+        StringTokenizer st1 = new StringTokenizer(text, "%");
+
+        while(st1.hasMoreElements() &&! found ){
+        ID = (String) st1.nextElement();
+       
+
+        if (ID.equals(idDeServicio + "RM")) {
+        String NOMBREDELSERVICIO = (String) st1.nextElement(); String COSTO = (String) st1.nextElement();  String MECANICOASIGNADO = (String) st1.nextElement();
+        String FECHALLE = (String) st1.nextElement(); String FECHAENTR = (String) st1.nextElement(); String MODELO = (String) st1.nextElement(); 
+        String MARCA = (String) st1.nextElement(); String COLOR = (String) st1.nextElement(); String SUBMARCA = (String) st1.nextElement(); 
+        String PLACAS = (String) st1.nextElement(); String KILOMMETRAJE = (String) st1.nextElement(); 
+        String NUMEROSERIE = (String) st1.nextElement();
+        String NOMBRECLIENTE = (String) st1.nextElement(); String DIRECCION = (String) st1.nextElement(); String TELEFONO = (String) st1.nextElement(); String CORREO = (String) st1.nextElement();
+        String ULTVISITA = (String) st1.nextElement(); String OBSMEC  = (String) st1.nextElement(); String OBSCLI  = (String) st1.nextElement(); 
+        
+        
+        found = true;
+        
+        iddeOrdenTextField.setText(ID);
+        fechaFacturajTextField.setText(FECHAENTR);
+        dueñoTotaljTextField.setText(NOMBRECLIENTE);
+        sumaTotaljTextField1.setText(SUBMARCA);
+        direccionTotaljTextField.setText(DIRECCION);
+        placasTextField.setText(PLACAS);
+        modeloTextField.setText(MODELO);
+        marcaTextField.setText(MARCA);
+        kilometrajeTextField.setText(KILOMMETRAJE);
+        jTextArea1.setText(NOMBREDELSERVICIO);
+        sumaTotaljTextField.setText(COSTO);
+        jTextField6.setText(OBSCLI);
+        jTextField5.setText(OBSMEC);
+        mecanicoAsignadojTextField.setText(MECANICOASIGNADO);
+        
+        
+        
+
+        }
+            }
+                }
+        
+        if (found) {
+        System.out.println("Numero Encontrado ");
+        
+        
+
+        }else{
+            System.out.println("Numero no Encontrado DENTRO (Unico)");
+            
+           
+        
+        
+        
+            }
+        }finally{
+            try{
+            if(reader!= null){
+
+            reader.close();}
+
+            }catch (IOException e){}
+            }
+
+            } catch (Exception e) {
+            mostrarMensajeEmergente("Error", "El código debe de ser un número ");
+            }
+
+        }else{
+
+        mostrarMensajeEmergente("Error", "No puedes tener espacios en Blanco");
+
+        
+        }
+
+    }//GEN-LAST:event_buscarjButtonAtrasActionPerformed
+
     private void cargarRegistros(){
         
     }
@@ -417,6 +529,7 @@ public class facturaVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buscarjButtonAtras;
     private javax.swing.JTextField direccionTotaljTextField;
     private javax.swing.JTextField dueñoTotaljTextField;
     private javax.swing.JTextField fechaFacturajTextField;

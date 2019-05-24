@@ -422,7 +422,7 @@ public class cancelarServicio extends javax.swing.JFrame {
     private javax.swing.JTextField buscarIdjTextField;
     private javax.swing.JButton buscarjButton1;
     private javax.swing.JTextField dueñojTextField6;
-    private javax.swing.JButton eliminarjButton;
+    private static javax.swing.JButton eliminarjButton;
     private javax.swing.JTextField idServiciojTextField5;
     private javax.swing.JButton jButtonAtras;
     private javax.swing.JLabel jLabel1;
