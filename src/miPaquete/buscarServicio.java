@@ -80,14 +80,14 @@ public class buscarServicio extends javax.swing.JFrame {
         observacionesClientejTextField = new javax.swing.JTextField();
         facturaButton = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
-        placasTextField1 = new javax.swing.JTextField();
-        costojTextField = new javax.swing.JTextField();
-        nombreDelServiciojComboBox = new javax.swing.JComboBox<>();
-        mecanicoAsignadojComboBox2 = new javax.swing.JComboBox<>();
-        modeloComboBox = new javax.swing.JComboBox<>();
-        submarcaComboBox = new javax.swing.JComboBox<>();
-        colorComboBox = new javax.swing.JComboBox<>();
-        marcaComboBox = new javax.swing.JComboBox<>();
+        submarcaTextField = new javax.swing.JTextField();
+        costojTextField1 = new javax.swing.JTextField();
+        placasTextField3 = new javax.swing.JTextField();
+        modeloTextField1 = new javax.swing.JTextField();
+        mecanicoAsignadoTextField1 = new javax.swing.JTextField();
+        marcaTextField2 = new javax.swing.JTextField();
+        colorTextField2 = new javax.swing.JTextField();
+        nombreServicioTextField2 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         buscarIdjTextField = new javax.swing.JTextField();
         buscarjButton = new javax.swing.JButton();
@@ -232,23 +232,29 @@ public class buscarServicio extends javax.swing.JFrame {
         jPanel3.add(facturaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 712, 83, 36));
         jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 190, 150));
 
-        placasTextField1.setEditable(false);
-        jPanel3.add(placasTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 144, -1));
+        submarcaTextField.setEditable(false);
+        jPanel3.add(submarcaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 144, -1));
 
-        costojTextField.setEditable(false);
-        jPanel3.add(costojTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 90, -1));
+        costojTextField1.setEditable(false);
+        jPanel3.add(costojTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 90, -1));
 
-        jPanel3.add(nombreDelServiciojComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 90, -1));
+        placasTextField3.setEditable(false);
+        jPanel3.add(placasTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 144, -1));
 
-        jPanel3.add(mecanicoAsignadojComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 90, -1));
+        modeloTextField1.setEditable(false);
+        jPanel3.add(modeloTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 144, -1));
 
-        jPanel3.add(modeloComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 38, 144, -1));
+        mecanicoAsignadoTextField1.setEditable(false);
+        jPanel3.add(mecanicoAsignadoTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 560, 144, -1));
 
-        jPanel3.add(submarcaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 92, 142, -1));
+        marcaTextField2.setEditable(false);
+        jPanel3.add(marcaTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 144, -1));
 
-        jPanel3.add(colorComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 92, 113, -1));
+        colorTextField2.setEditable(false);
+        jPanel3.add(colorTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 144, -1));
 
-        jPanel3.add(marcaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 38, 113, -1));
+        nombreServicioTextField2.setEditable(false);
+        jPanel3.add(nombreServicioTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 144, -1));
 
         jScrollPane1.setViewportView(jPanel3);
 
@@ -328,8 +334,8 @@ public class buscarServicio extends javax.swing.JFrame {
     private void editarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarjButtonActionPerformed
        kilometrajeTextField.setEditable(true);
        ultimaVisitaTextField2.setEditable(true);
-       submarcaComboBox.setEditable(true);
-       placasTextField1.setEditable(true);
+       submarcaTextField.setEditable(true);
+       placasTextField3.setEditable(true);
        observacionesClientejTextField.setEditable(true);
        nombreClienteTextField2.setEditable(true);
        numeroSerieTextField.setEditable(true);
@@ -337,10 +343,10 @@ public class buscarServicio extends javax.swing.JFrame {
        correoClienteTextField2.setEditable(true);
        fechaEntregajFormattedTextField.setEditable(true);
        fechaLLegadajFormattedTextField.setEditable(true);
-       modeloComboBox.setEditable(true);
-       marcaComboBox.setEditable(true);
-       submarcaComboBox.setEditable(true);
-       colorComboBox.setEditable(true);
+       modeloTextField1.setEditable(true);
+       marcaTextField2.setEditable(true);
+       submarcaTextField.setEditable(true);
+       colorTextField2.setEditable(true);
       
        
        
@@ -392,16 +398,16 @@ public class buscarServicio extends javax.swing.JFrame {
         found = true;
         
         idServiciojTextField.setText(ID);
-        nombreDelServiciojComboBox.getItemAt(WIDTH);
-        costojTextField.setText(COSTO);
-        mecanicoAsignadojComboBox2.getItemAt(WIDTH);
+        nombreServicioTextField2.setText(NOMBREDELSERVICIO);
+        costojTextField1.setText(COSTO);
+        mecanicoAsignadoTextField1.setText(MECANICOASIGNADO);
         fechaLLegadajFormattedTextField.setText(FECHALLE);
         fechaEntregajFormattedTextField.setText(FECHAENTR);
-        modeloComboBox.getItemAt(WIDTH);
-        marcaComboBox.getItemAt(WIDTH);
-        colorComboBox.getItemAt(WIDTH);
-        submarcaComboBox.getItemAt(WIDTH);
-        placasTextField1.setText(PLACAS);
+        modeloTextField1.setText(MODELO);
+        marcaTextField2.setText(MARCA);
+        colorTextField2.setText(COLOR);
+        submarcaTextField.setText(SUBMARCA);
+        placasTextField3.setText(PLACAS);
         kilometrajeTextField.setText(KILOMMETRAJE);
         numeroSerieTextField.setText(NUMEROSERIE);
         nombreClienteTextField2.setText(NOMBRECLIENTE);
@@ -520,9 +526,9 @@ public class buscarServicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField buscarIdjTextField;
     private javax.swing.JButton buscarjButton;
-    private javax.swing.JComboBox<String> colorComboBox;
+    private javax.swing.JTextField colorTextField2;
     private javax.swing.JTextField correoClienteTextField2;
-    private javax.swing.JTextField costojTextField;
+    private javax.swing.JTextField costojTextField1;
     private javax.swing.JTextField direccionClienteTextField2;
     private javax.swing.JButton editarjButton;
     private javax.swing.JButton facturaButton;
@@ -558,17 +564,17 @@ public class buscarServicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField kilometrajeTextField;
-    private javax.swing.JComboBox<String> marcaComboBox;
-    private javax.swing.JComboBox<String> mecanicoAsignadojComboBox2;
-    private javax.swing.JComboBox<String> modeloComboBox;
+    private javax.swing.JTextField marcaTextField2;
+    private javax.swing.JTextField mecanicoAsignadoTextField1;
+    private javax.swing.JTextField modeloTextField1;
     private javax.swing.JTextField nombreClienteTextField2;
-    private javax.swing.JComboBox<String> nombreDelServiciojComboBox;
+    private javax.swing.JTextField nombreServicioTextField2;
     private javax.swing.JTextField numeroSerieTextField;
     private javax.swing.JTextField numeroTelefonicoTextField;
     private javax.swing.JTextField observacionesClientejTextField;
     private javax.swing.JTextField observacionesMecanicojTextField;
-    private javax.swing.JTextField placasTextField1;
-    private javax.swing.JComboBox<String> submarcaComboBox;
+    private javax.swing.JTextField placasTextField3;
+    private javax.swing.JTextField submarcaTextField;
     private javax.swing.JTextField ultimaVisitaTextField2;
     // End of variables declaration//GEN-END:variables
 }
