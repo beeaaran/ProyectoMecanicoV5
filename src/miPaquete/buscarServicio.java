@@ -379,7 +379,7 @@ public class buscarServicio extends javax.swing.JFrame {
         ID = (String) st1.nextElement();
        
 
-        if (ID.equals(idDeServicio + "R")) {
+        if (ID.equals(idDeServicio + "RM")) {
         String NOMBREDELSERVICIO = (String) st1.nextElement(); String COSTO = (String) st1.nextElement();  String MECANICOASIGNADO = (String) st1.nextElement();
         String FECHALLE = (String) st1.nextElement(); String FECHAENTR = (String) st1.nextElement(); String MODELO = (String) st1.nextElement(); 
         String MARCA = (String) st1.nextElement(); String COLOR = (String) st1.nextElement(); String SUBMARCA = (String) st1.nextElement(); 

@@ -7,11 +7,13 @@ package miPaquete;
 
 import static java.awt.image.ImageObserver.WIDTH;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -212,14 +214,13 @@ public class cancelarServicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void eliminarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarjButtonActionPerformed
+      String idDeServicio = buscarIdjTextField.getText();
         if(!buscarIdjTextField.getText().equals("")){
 
-        try {
-
-        String codigoBuscado = buscarIdjTextField.getText();
-
+       try {
 
         File file = new File ("miArchivo2.txt");
+        File newFile = new File("tempFile.txt");
         BufferedReader reader = null;
         boolean found = false;
        
@@ -231,56 +232,48 @@ public class cancelarServicio extends javax.swing.JFrame {
         // Always wrap FileReader in BufferedReader.
         reader = new BufferedReader(fl);
         String text;
+        FileWriter fw = new FileWriter(newFile, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
 
         while((text = reader.readLine()) != null) {
 
         StringTokenizer st1 = new StringTokenizer(text, "%");
 
-        while(st1.hasMoreElements() &&! found ){
+        while(st1.hasMoreElements()){
         ID = (String) st1.nextElement();
+        String NOMBREDELSERVICIO = (String) st1.nextElement(); String COSTO = (String) st1.nextElement();  String MECANICOASIGNADO = (String) st1.nextElement();
+        String FECHALLE = (String) st1.nextElement(); String FECHAENTR = (String) st1.nextElement(); String MODELO = (String) st1.nextElement(); 
+        String MARCA = (String) st1.nextElement(); String COLOR = (String) st1.nextElement(); String SUBMARCA = (String) st1.nextElement(); 
+        String PLACAS = (String) st1.nextElement(); String KILOMMETRAJE = (String) st1.nextElement(); 
+        String NUMEROSERIE = (String) st1.nextElement();
+        String NOMBRECLIENTE = (String) st1.nextElement(); String DIRECCION = (String) st1.nextElement(); String TELEFONO = (String) st1.nextElement(); String CORREO = (String) st1.nextElement();
+        String ULTVISITA = (String) st1.nextElement(); String OBSMEC  = (String) st1.nextElement(); String OBSCLI  = (String) st1.nextElement(); 
        
 
-        if (ID.equals(codigoBuscado+"R")) {
-        
-        
-        found = true;
-        
-        
-        
-        
-        
-
+        if (!ID.equals(idDeServicio + "RM")) {
+        pw.println(ID+ "%"+ NOMBREDELSERVICIO +"%"+ COSTO +"%"+ MECANICOASIGNADO +"%"+ 
+        FECHALLE +"%"+ FECHAENTR +"%"+ MODELO +"%"+ MARCA +"%"+ COLOR +"%"+ 
+        SUBMARCA +"%"+ PLACAS +"%"+ KILOMMETRAJE +"%"+ NUMEROSERIE +"%"+ NOMBRECLIENTE +"%"+ 
+        DIRECCION +"%"+ TELEFONO +"%"+ CORREO +"%"+ ULTVISITA +"%"+ OBSMEC+ "%"+ 
+        OBSCLI+ "%");
         }
+        
+       
             }
+        
+        
+        
                 }
+        reader.close();
+        pw.flush();
+        pw.close();
+        file.delete();
+        File dump = new File("miArchivo2.txt");
+        newFile.renameTo(dump);
+        mostrarMensajeEmergente("Exito", "Registro Eliminado");
         
-        if (found) {
-            try {
-            
-            Scanner scan = new  Scanner(file);
-            String filecontent = ("\n");
-            while (scan.hasNextLine()) {
-                filecontent = filecontent.concat(scan.nextLine() + "\n");
-            }
-        try {
-            FileWriter writer = new FileWriter("miArchivo2.txt");
-            writer.write(filecontent);
-            writer.close();;
-        } catch (IOException ex) {
-            Logger.getLogger(vistaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(vistaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-            
         
-        System.out.println("Numero Encontrado Dentro De");
-
-        }else{
-            System.out.println("Numero no Encontrado DENTRO");
-            }
         }finally{
             try{
             if(reader!= null){
@@ -296,10 +289,10 @@ public class cancelarServicio extends javax.swing.JFrame {
 
         }else{
 
-        mostrarMensajeEmergente("Error", "Introduce un código para buscar");
+        mostrarMensajeEmergente("Error", "No puedes tener espacios en Blanco");
 
+        
         }
-
 
     }//GEN-LAST:event_eliminarjButtonActionPerformed
 
@@ -332,7 +325,7 @@ public class cancelarServicio extends javax.swing.JFrame {
         ID = (String) st1.nextElement();
        
 
-        if (ID.equals(codigoBuscado+"R")) {
+        if (ID.equals(codigoBuscado+"RM")) {
         String NOMBREDELSERVICIO = (String) st1.nextElement(); String COSTO = (String) st1.nextElement();  String MECANICOASIGNADO = (String) st1.nextElement();
         String FECHALLE = (String) st1.nextElement(); String FECHAENTR = (String) st1.nextElement(); String MODELO = (String) st1.nextElement(); 
         String MARCA = (String) st1.nextElement(); String COLOR = (String) st1.nextElement(); String SUBMARCA = (String) st1.nextElement(); 

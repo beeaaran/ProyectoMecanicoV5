@@ -315,7 +315,7 @@ public class vistaRegistrar extends javax.swing.JFrame {
         ID = (String) st1.nextElement();
        
 
-        if (ID.equals(idDeServicio + "R") ) {
+        if (ID.equals(idDeServicio + "RM") ) {
         
         
         found = true;
@@ -339,7 +339,7 @@ public class vistaRegistrar extends javax.swing.JFrame {
             try {
             Controlador.registrarServicio(idDeServicio, nombreDelServicio, costo, mecanicoAsignado, observacionesCliente, fechaLLegada, fechaEntrega, modelo, marca, color, submarca, placas, kilometraje, numeroDeSerie, nombreCliente, direccion, telefono, correo, ultimaVisita, observacionesMecanico);
             Scanner scan = new  Scanner(file);
-            String filecontent = (idDeServicio + "R" + "%" + nombreDelServicio + "%" + costo + "%" + mecanicoAsignado + "%" + fechaLLegada + "%" + fechaEntrega + "%" + modelo + "%" +marca + "%" + color + "%" + submarca + "%" + placas + "%" + kilometraje + "%" + numeroDeSerie + "%" + nombreCliente + "%" + direccion + "%" + telefono + "%" + correo + "%" + ultimaVisita + "%" + observacionesMecanico +"-"+ "%" + observacionesCliente + "-"  + "%" + "\n" );
+            String filecontent = (idDeServicio + "RM" + "%" + nombreDelServicio + "%" + costo + "%" + mecanicoAsignado + "%" + fechaLLegada + "%" + fechaEntrega + "%" + modelo + "%" +marca + "%" + color + "%" + submarca + "%" + placas + "%" + kilometraje + "%" + numeroDeSerie + "%" + nombreCliente + "%" + direccion + "%" + telefono + "%" + correo + "%" + ultimaVisita + "%" + observacionesMecanico +"-"+ "%" + observacionesCliente + "-"  + "%" + "\n" );
             while (scan.hasNextLine()) {
                 filecontent = filecontent.concat(scan.nextLine() + "\n");
             }

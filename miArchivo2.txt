@@ -1,12 +1,4 @@
-444R%Filtro de aire%90000.0%José Gutiérrez%9%9%1995%Nissan%Verde%Leaf%O2OSDOS%7000%CXXCSDDSD%Adrian Roman%Montenegro #1998%3355568547%adrianroman@gmail.com%9%-%-%
-8R%Servicio completo%8.0%Selecciona...%8%8%1995%Alfa Romeo%Rojo%MiTo%8%8%8%8%8%8%8%8%8888888888-%88888888888888888888888888-%
-13R%Cambio de aceite%130000.0%Luis Padilla%12%12%1997%Ferrari%Negro%F12 Berlinetta%CECIMAX93%66666%6S632HGS%Cecilio Garcia%Zapopan%331875496%ceciliog@gmail.com%12%-%-%
-1122R%Servicio menor%1.0%Jaime Prieto%12152%121457%1997%Ford%Rojo%C-MAX%GGGG%300000%XCXSDDWDSDA%Kinder Malo%121%3310199575%66%1%-%-%
-11R%Servicio menor%1.0%Jaime Prieto%12152%121457%1997%Ford%Rojo%C-MAX%GGGG%300000%XCXSDDWDSDA%Kinder Malo%121%3310199575%66%1%-%-%
-1R%Servicio menor%1.0%Jaime Prieto%12152%121457%1997%Ford%Rojo%C-MAX%GGGG%300000%XCXSDDWDSDA%Kinder Malo%121%3310199575%66%1%-%-%
-5R%Servicio menor%40000.0%Jaime Prieto%5%5%2016%Ford%Rojo%null%XHYYSY%500000%D3SD23S2%Arnulfo Ramirez%Arco Iris 1527%3310199575%beeaaran@gmail.com%5%-%-%
-75R%Servicio menor%7.0%Jaime Prieto%7%7%1995%Ford%Rojo%null%8%8%8%8%8%8%8%8%-%-%
-44R%Servicio menor%4000.0%Jaime Prieto%17/05/2019%18/03/2019%2000%Ford%Rojo%Camaro%YYYYRT%5000%23D2FFG4FRE%Pimp Flaco%Catalunia%3310199575%pimpflaquito@gmail.com%5%4%-%
-7R%Servicio menor%4000.0%Jaime Prieto%28/02/98%05/03/2019%1995%Ford%Rojo%Camaro%XYYYYY%40000%3X3D4F3RDS%Juan Arnulfo%Arco Iris 1527%3310199575%beeaaran@gmail.com%776765%3%4%
-
-
+10RM%Filtro de aceite%9.0%Luis Padilla%9%99%1998%Nissan%Azul%370Z%9%9%9%9%9%9%9%9%-%-%
+99RM%Filtro de aceite%9.0%Luis Padilla%9%99%1998%Nissan%Azul%370Z%9%9%9%9%9%9%9%9%-%-%
+5RM%Servicio completo%5.0%Selecciona...%5%5%1995%Alfa Romeo%Amarillo%4C%5%5%5%5%5%5%5%5%-%-%
+1RM%Cambio de aceite%1.0%Arturo Gómez%1%1%1995%Nissan%Rojo%370Z%1%1%1%1%1%1%1%1%-%-%
